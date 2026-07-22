@@ -1,13 +1,4 @@
-"""
-Entry point for the Applied RAG Music Recommender.
-
-Run:
-    python src/main.py          (from project root)
-
-Set environment variables in applied-rag-music-recommender/.env:
-    LASTFM_API_KEY=your_lastfm_key
-    GEMINI_API_KEY=your_gemini_key
-"""
+"""Entry point — run as `python src/main.py` from the project root."""
 
 from pathlib import Path
 from dotenv import load_dotenv
@@ -18,6 +9,7 @@ from recommender import UserRequest, recommend_songs
 
 
 def main() -> None:
+    """Run a sample recommendation and print results to stdout."""
     request = UserRequest("upbeat pop for a morning workout")
 
     try:
@@ -30,8 +22,7 @@ def main() -> None:
     for i, (song, score, explanation) in enumerate(results, 1):
         print(f"{i}. {song.title} by {song.artist}  (score: {score:.2f})")
         print(f"   {explanation}")
-        print(f"   {song.url}")
-        print()
+        print(f"   {song.url}\n")
 
 
 if __name__ == "__main__":
