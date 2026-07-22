@@ -42,6 +42,24 @@ def recommend_songs(request: UserRequest, k: int = 5) -> List[Tuple[Song, float,
       3. fetch_songs_by_tags  — Last.fm returns real tracks for those tags
       4. rank_and_explain     — Gemini scores and explains the combined pool
     """
-    # TODO: step 0 — call validate_request(request); if False, raise ValueError("Request is not music-related")
-    # TODO: implement remaining pipeline steps
-    pass
+    from ai_recommender import validate_request, parse_tags, rank_and_explain
+    from fetcher import load_favorite_songs, fetch_songs_by_tags
+
+    # Step 0: guard rail — reject off-topic requests before any API calls
+    if not validate_request(request):
+        raise ValueError("Request is not music-related")
+
+    # Step 1: local favorites always enter the pool first
+    favorites = load_favorite_songs()
+
+    # Step 2: Gemini turns natural language into Last.fm search tags
+    tags = parse_tags(request)
+
+    # Step 3: fetch real tracks from Last.fm for each tag
+    fetched = fetch_songs_by_tags(tags)
+
+    # Step 4: merge (favorites first, no duplicates), then Gemini ranks
+    seen_ids = {s.id for s in favorites}
+    pool = favorites + [s for s in fetched if s.id not in seen_ids]
+
+    return rank_and_explain(request, pool, k=k)
