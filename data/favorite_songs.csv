@@ -1,0 +1,16 @@
+id,title,artist,genre,mood,tags,listeners,url
+seed-001,Midnight Pulse,Neon Echo,synthwave,moody,synthwave|dark|night|driving|electronic,482000,https://www.last.fm
+seed-002,Golden Hour Run,Max Pulse,pop,happy,pop|upbeat|workout|energetic|summer,910000,https://www.last.fm
+seed-003,Rain on Glass,Paper Lanterns,lofi,chill,lofi|chill|study|rainy|ambient|focus,670000,https://www.last.fm
+seed-004,Concrete Sunrise,Block Theory,hip-hop,energetic,hip-hop|urban|energetic|hype|rap,540000,https://www.last.fm
+seed-005,Velvet Undertow,Simone Lake,r&b,romantic,r&b|smooth|romantic|late night|soul,390000,https://www.last.fm
+seed-006,Hollow Mountain,The Hollow Pines,folk,melancholic,folk|acoustic|melancholic|introspective|sad,280000,https://www.last.fm
+seed-007,Circuit Bloom,Circuit Bloom,electronic,energetic,electronic|dance|upbeat|festival|rave,720000,https://www.last.fm
+seed-008,Orbit Slow,Orbit Bloom,ambient,peaceful,ambient|space|peaceful|meditation|instrumental,310000,https://www.last.fm
+seed-009,Storm Protocol,Void Protocol,metal,aggressive,metal|heavy|aggressive|intense|loud,430000,https://www.last.fm
+seed-010,Coffee and Keys,Slow Stereo,jazz,relaxed,jazz|cafe|relaxed|mellow|piano|morning,260000,https://www.last.fm
+seed-011,Dusty Two-Lane,Delta Harmon,country,nostalgic,country|nostalgic|road trip|acoustic|americana,195000,https://www.last.fm
+seed-012,Island Static,Coastal Drift,reggae,peaceful,reggae|island|peaceful|summer|chill,340000,https://www.last.fm
+seed-013,Focus State,LoRoom,lofi,focused,lofi|focus|study|instrumental|beats|productivity,580000,https://www.last.fm
+seed-014,Red Line,Voltline,rock,intense,rock|intense|guitar|driving|adrenaline,620000,https://www.last.fm
+seed-015,Nocturne in Blue,Clara Voss,classical,peaceful,classical|piano|nocturne|peaceful|sleep,175000,https://www.last.fm
