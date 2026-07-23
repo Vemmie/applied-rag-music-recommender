@@ -12,7 +12,7 @@ from google.genai import types
 
 from recommender import Song, UserRequest, Recommendation
 
-GEMINI_MODEL = "gemini-2.0-flash"
+GEMINI_MODEL = "gemini-flash-latest"
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 _client = genai.Client(api_key=GEMINI_API_KEY)

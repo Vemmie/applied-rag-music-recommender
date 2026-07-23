@@ -31,7 +31,9 @@ GEMINI_API_KEY=your_gemini_key
 LASTFM_API_KEY=your_lastfm_key
 ```
 
-I recommend the "gemini-2.0-flash" model for higher limits.
+**PLEASE DO THIS, AT LEAST THE GEMINI KEY OR IT WON'T WORK!**
+
+I recommend the "gemini-flash-latest" model for better results and "gemini-2.0-flash" higher limits.
 
 Links:
 1. https://www.last.fm/api/authentication
@@ -41,24 +43,66 @@ Run the app from the project root with `python src/main.py`.
 
 # Sample Interactions:
 
+Full interaction log available in [interaction_log.txt](interaction_log.txt).
+
+**Example 1 — dark moody late night songs**
 ```
 Music Recommender  (type 'quit' to exit)
 
+What kind of music are you looking for? dark moody late night songs
+
+Top 5 recommendations for: "dark moody late night songs"
+
+1. Archangel by Burial  (score: 0.98, confidence: 98%)
+   Definitive late-night UK garage/future burial track with crackling ambient textures and a moody vibe.
+   https://www.last.fm/music/Burial/_/Archangel
+
+2. Midnight Pulse by Neon Echo  (score: 0.95, confidence: 100%)
+   Specifically tagged with synthwave, dark, night, and driving, fitting the prompt perfectly.
+   https://www.last.fm
+
+3. The Hills by The Weeknd  (score: 0.95, confidence: 98%)
+   An iconic dark alternative R&B hit defined by heavy bass and late-night themes.
+   https://www.last.fm/music/The+Weeknd/_/The+Hills
+
+4. The Night by Morphine  (score: 0.95, confidence: 95%)
+   Deep baritone saxophone low-rock track explicitly capturing a dark late-night atmosphere.
+   https://www.last.fm/music/Morphine/_/The+Night
+
+5. Often by The Weeknd  (score: 0.92, confidence: 98%)
+   Sultry, dark R&B track designed around late-night themes and moodiness.
+   https://www.last.fm/music/The+Weeknd/_/Often
+
+Save to favorites? Enter result numbers (e.g. 1 3) or press Enter to skip:
+```
+
+**Example 2 — upbeat pop for a morning workout**
+```
 What kind of music are you looking for? upbeat pop for a morning workout
 
 Top 5 recommendations for: "upbeat pop for a morning workout"
 
-1. Levitating by Dua Lipa  (score: 0.97, confidence: 95%)
-   Upbeat, high-energy pop with a driving beat perfect for a morning workout.
-   https://www.last.fm/music/Dua+Lipa/_/Levitating
+1. Golden Hour Run by Max Pulse  (score: 1.00, confidence: 95%)
+   Tagged explicitly as pop, upbeat, workout, and energetic, making it an ideal match for a morning workout.
+   https://www.last.fm
 
-2. As It Was by Harry Styles  (score: 0.93, confidence: 91%)
-   Energetic indie-pop with a bright, driving tempo that fits a morning run perfectly.
-   https://www.last.fm/music/Harry+Styles/_/As+It+Was
+2. Beauty and a Beat by Justin Bieber  (score: 0.95, confidence: 95%)
+   A high-energy, driving dance-pop track that is fantastic for an upbeat morning workout.
+   https://www.last.fm/music/Justin+Bieber/_/Beauty+and+a+Beat
 
-3. Blinding Lights by The Weeknd  (score: 0.89, confidence: 88%)
-   Synth-driven pop with a relentless beat that keeps energy high throughout a workout.
-   https://www.last.fm/music/The+Weeknd/_/Blinding+Lights
+3. Pocketful of Sunshine by Natasha Bedingfield  (score: 0.95, confidence: 95%)
+   Extremely cheerful, upbeat pop track that explicitly fits a bright morning workout theme.
+   https://www.last.fm/music/Natasha+Bedingfield/_/Pocketful+of+Sunshine
+
+4. Work This Body by Walk the Moon  (score: 0.95, confidence: 95%)
+   An exuberant indie pop anthem specifically about physical movement and working out.
+   https://www.last.fm/music/Walk+the+Moon/_/Work+This+Body
+
+5. Run the World (Girls) by Beyoncé  (score: 0.95, confidence: 95%)
+   A powerful, high-energy pop/R&B anthem with intense rhythms perfect for workouts.
+   https://www.last.fm/music/Beyonc%C3%A9/_/Run+the+World+(Girls)
+
+Save to favorites? Enter result numbers (e.g. 1 3) or press Enter to skip:
 
 What kind of music are you looking for? quit
 Bye!
