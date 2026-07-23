@@ -4,7 +4,7 @@ Pipeline: validate -> load CSV -> parse tags -> fetch Last.fm -> rank with Gemin
 """
 
 from dataclasses import dataclass
-from typing import List, Tuple
+from typing import List, NamedTuple
 
 
 @dataclass
@@ -28,7 +28,16 @@ class UserRequest:
     text: str
 
 
-def recommend_songs(request: UserRequest, k: int = 5) -> List[Tuple[Song, float, str]]:
+class Recommendation(NamedTuple):
+    """A ranked song result with match score, AI confidence, and explanation."""
+
+    song: Song
+    score: float
+    confidence: float
+    explanation: str
+
+
+def recommend_songs(request: UserRequest, k: int = 5) -> List[Recommendation]:
     """Run the full RAG pipeline; raises ValueError if the request isn't music-related.
 
     Imports are deferred to avoid circular imports with fetcher and ai_recommender.

@@ -19,10 +19,11 @@ def main() -> None:
         return
 
     print(f"Top {len(results)} recommendations for: \"{request.text}\"\n")
-    for i, (song, score, explanation) in enumerate(results, 1):
-        print(f"{i}. {song.title} by {song.artist}  (score: {score:.2f})")
-        print(f"   {explanation}")
-        print(f"   {song.url}\n")
+    for i, rec in enumerate(results, 1):
+        print(f"{i}. {rec.song.title} by {rec.song.artist}  "
+              f"(score: {rec.score:.2f}, confidence: {rec.confidence:.0%})")
+        print(f"   {rec.explanation}")
+        print(f"   {rec.song.url}\n")
 
 
 if __name__ == "__main__":
