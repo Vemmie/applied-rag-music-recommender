@@ -5,7 +5,26 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).parent.parent / ".env")
 
+from fetcher import save_favorite_song
 from recommender import UserRequest, recommend_songs
+
+
+def _prompt_save(results) -> None:
+    """Ask the user if they want to save any results to favorites."""
+    answer = input("Save to favorites? Enter result numbers (e.g. 1 3) or press Enter to skip: ").strip()
+    if not answer:
+        return
+    saved = []
+    for part in answer.split():
+        if part.isdigit():
+            idx = int(part) - 1
+            if 0 <= idx < len(results):
+                save_favorite_song(results[idx].song)
+                saved.append(results[idx].song.title)
+    if saved:
+        print(f"Saved: {', '.join(saved)}\n")
+    else:
+        print("No valid numbers entered, nothing saved.\n")
 
 
 def main() -> None:
@@ -32,6 +51,8 @@ def main() -> None:
                   f"(score: {rec.score:.2f}, confidence: {rec.confidence:.0%})")
             print(f"   {rec.explanation}")
             print(f"   {rec.song.url}\n")
+
+        _prompt_save(results)
 
 
 if __name__ == "__main__":
