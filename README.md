@@ -34,8 +34,8 @@ LASTFM_API_KEY=your_lastfm_key
 I recommend the "gemini-2.0-flash" model for higher limits.
 
 Links:
-https://www.last.fm/api/authentication
-https://aistudio.google.com/api-keys
+1. https://www.last.fm/api/authentication
+2. https://aistudio.google.com/api-keys
 
 Run the app from the project root with `python src/main.py`.
 
